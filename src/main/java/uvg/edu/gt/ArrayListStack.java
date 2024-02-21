@@ -1,6 +1,7 @@
 package uvg.edu.gt;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 public class ArrayListStack<E> implements Stack<E> {
     private ArrayList<E> list;

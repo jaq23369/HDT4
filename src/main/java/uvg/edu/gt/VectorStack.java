@@ -1,6 +1,7 @@
 package uvg.edu.gt;
 
 import java.util.Vector;
+import java.util.EmptyStackException;
 
 public class VectorStack<E> implements Stack<E> {
     private Vector<E> vector;
