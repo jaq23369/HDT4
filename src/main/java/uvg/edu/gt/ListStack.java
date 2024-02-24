@@ -1,19 +1,18 @@
 package uvg.edu.gt;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.EmptyStackException;
 
-public class ArrayListStack<E> implements Stack<E> {
-    private ArrayList<E> list;
-    
+public class ListStack<E> implements Stack<E> {
+    private List<E> backendList;
 
-    public ArrayListStack() {
-        list = new ArrayList<>();
+    public ListStack(List<E> backendList) {
+        this.backendList = backendList;
     }
 
     @Override
     public void push(E item) {
-        list.add(item);
+        backendList.add(0, item);
     }
 
     @Override
@@ -21,7 +20,7 @@ public class ArrayListStack<E> implements Stack<E> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return list.remove(list.size() - 1);
+        return backendList.remove(0);
     }
 
     @Override
@@ -29,16 +28,17 @@ public class ArrayListStack<E> implements Stack<E> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return list.get(list.size() - 1);
+        return backendList.get(0);
     }
 
     @Override
     public boolean isEmpty() {
-        return list.isEmpty();
+        return backendList.isEmpty();
     }
 
     @Override
     public int size() {
-        return list.size();
+        return backendList.size();
     }
 }
+
